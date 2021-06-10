@@ -33,5 +33,9 @@ server.get('/test', (req, res) => {
   })
 })
 
+server.get('/home', (req, res) => {
+  res.render('startPage')
+})
+
 
 module.exports = server
