@@ -1,5 +1,6 @@
 const express = require('express')
 const hbs = require('express-handlebars')
+const db = require('./db.js')
 
 const server = express()
 
@@ -13,6 +14,15 @@ server.use(express.static('public'))
 
 server.get('/', (req, res) => {
   res.render('home')
+})
+
+server.get('/test', (req, res) => {
+  let card
+  db.getAnswerCardById(2)
+  .then(card => {
+    console.log(card)
+    res.render('test', card)
+  })
 })
 
 
