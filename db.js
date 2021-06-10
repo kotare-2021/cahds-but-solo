@@ -2,18 +2,12 @@ const environment = process.env.NODE_ENV || 'development'
 const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
-module.exports = {
-  testFunc,
-  getAnswerCardById,
-  getPlayerHand
-}
-
 const testFunc = () => {
   return null
 }
 
 const getAnswerCardById = (id, db = connection) => {
-  return db('answerCards').select()
+  return db('answersCards').select().first()
     .where('id', id)
     .then(resp => {
       return resp
@@ -24,7 +18,7 @@ const getAnswerCardById = (id, db = connection) => {
 }
 
 const getPlayerHand = (db = connection) => {
-  return db('answerCards').select()
+  return db('answersCards').select()
     .where('player_id', 1)
     .then(resp => {
       return resp
@@ -34,3 +28,8 @@ const getPlayerHand = (db = connection) => {
     })
 }
 
+module.exports = {
+  testFunc,
+  getAnswerCardById,
+  getPlayerHand
+}
