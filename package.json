@@ -9,7 +9,7 @@
     "knex": "knex",
     "lint": "eslint",
     "test": "echo \"lol like fuck u scrub\" && exit 0",
-    "build": "knex_migrations"
+    "build": "knex migrate:latest"
   },
   "repository": {
     "type": "git",
