@@ -20,7 +20,7 @@ const getAnswerCardById = (id, db = connection) => {
 const questionList = (db = connection) => {
   return db('questionCards').select()
     .then(cards => {
-      console.log(cards)
+      // console.log(cards)
       return cards
     })
     .catch(err => {

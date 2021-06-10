@@ -7,32 +7,56 @@
     </div>
 </div>
 
-<button action='/' method='POST'>oi!</button>
 
-<div class="container" >
+<div class="container">
     <div class="card">
-        <div class="answer">
-            <p>{{answer}}answer</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="answer">
-            <p>{{answer}}answer</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="answer">
-            <p>{{answer}}answer</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="answer">
-            <p>{{answer}}answer</p>
-        </div>
-    </div>
-    <div class="card">
-        <div class="answer">
-            <p>{{answer}}answer</p>
+        <div class="played">
+            <p>{{answer}}</p>
         </div>
     </div>
 </div>
+
+<form action='/' method='POST'>
+  <div class="container" >
+    {{#each cards}}
+    <button type='submit' method='POST' action='/{{id}}'>
+      <div class="card">
+        <div class="answer">
+          <p>{{answer}}</p>
+        </div>
+      </div>
+    </button>
+    {{/each}}
+  </div>
+</form> 
+{{!--     
+<button type='submit' method='POST' action='/'>
+    <div class="card">
+        <div class="answer">
+            <p>{{answer}}answer</p>
+        </div>
+    </div>
+    
+    </button>
+<button type='submit' method='POST' action='/'>
+    <div class="card">
+        <div class="answer">
+            <p>{{answer}}answer</p>
+        </div>
+    </div>
+    </button>
+<button type='submit' method='POST' action='/'>
+    <div class="card">
+        <div class="answer">
+            <p>{{answer}}answer</p>
+        </div>
+    </div>
+    </button>
+<button type='submit' method='POST' action='/{{id}}'>
+    <div class="card">
+        <div class="answer">
+            <p>{{answer}}answer</p>
+        </div>
+    </div>
+  </button>
+--}}

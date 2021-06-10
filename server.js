@@ -13,25 +13,39 @@ server.use(express.urlencoded({ extended: true }))
 server.use(express.static('public'))
 // Routes
 
+
+
+// 1st stage - setup
+ - assign 5 cards the player_id 1
+ - grab all question
+ - set round to 1
+
+
+let gameData = {
+  round: 1,
+  handCards: [
+    {id: 1, answer: 'hi', round_id: 1},
+    {id: 2, answer: 'hi', round_id: 500},
+    {id: 3, answer: 'hi', round_id: 2},
+    {id: 4, answer: 'hi', round_id: 500},
+    {id: 5, answer: 'hi', round_id: 500}
+  ],
+  questionCard: [
+    {id: 1, questions: 'hi', round_id: 1},
+    {id: 2, questions: 'hi', round_id: 500},
+    {id: 3, questions: 'hi', round_id: 2},
+    {id: 4, questions: 'hi', round_id: 500},
+    {id: 5, questions: 'hi', round_id: 500}
+  ]
+
+}
+
 server.get('/', (req, res) => {
-  res.render('home')
+  res.render('home', {cards: [{answer: 'hi'}, {answer: 'hi'}, {answer: 'hi'}, {answer: 'hi'}, {answer: 'hi'}]})
 })
 
-server.post('/', (req, res) => {
-  let question
-  let hand
-  console.log('hi')
-  db.questionList()
-    .then(list => {
-      
-    })
-  var gameData = {
-    questions : db.questionList(),
-    round : 1,
-    playerHand : db.playerHand(),
-  }
-  console.log(gameData)
-  res.render('home')
+server.post('/game/:id', (req, res) => {
+  db.playCard(id)
 })
 
 server.get('/test', (req, res) => {
