@@ -3,7 +3,9 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  testFunc
+  testFunc,
+  getAnswerCardById,
+  getPlayerHand
 }
 
 const testFunc = () => {
@@ -11,13 +13,24 @@ const testFunc = () => {
 }
 
 const getAnswerCardById = (id, db = connection) => {
-  return db('users').select()
+  return db('answerCards').select()
     .where('id', id)
     .then(resp => {
       return resp
     })
     .catch(err => {
-      console.log(err.message)
+      console.log('Database error: ' + err.message)
+    })
+}
+
+const getPlayerHand = (db = connection) => {
+  return db('answerCards').select()
+    .where('player_id', 1)
+    .then(resp => {
+      return resp
+    })
+    .catch(err => {
+      console.log('Database error: ' + err.message)
     })
 }
 
