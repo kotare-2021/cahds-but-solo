@@ -1,29 +1,5 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-||||||| 121772e
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600');
-html * {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-=======
->>>>>>> bf0a4da9e21d043c2e247e8d695ce1e6fa0b7f6e
 html, body
 {
 
