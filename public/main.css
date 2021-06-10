@@ -99,3 +99,24 @@ html, body
   top: 40%;
   width: 100%;
 }
+
+.butt {
+  border: 1px outset black;
+  background-color: white;
+  height:50px;
+  width:50px;
+  cursor:pointer;
+}
+
+.butt:hover {
+  background-color: white;
+  color:black;
+}
+
+h1 {
+
+}
+
+
+
+
