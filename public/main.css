@@ -10,6 +10,8 @@ html * {
 }
 html, body
 {
+
+    background-image: url('/backgroun.png');
     height: 100%;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
