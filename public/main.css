@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -61,17 +63,28 @@ html, body
 }
 
 .butt {
-  border: 1px outset black;
+  border: 6px outset black;
   background-color: white;
   height:50px;
-  width:50px;
+  widows: 70px;
   cursor:pointer;
+  text-align:center
 }
 
-.butt:hover {
-  background-color: white;
-  color:black;
+
+h1 {
+  text-align:center
 }
+
+h2 {
+  text-align:center
+}
+
+.center-button {
+  text-align: center;
+}
+
+
 
 
 

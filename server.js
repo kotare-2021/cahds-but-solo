@@ -26,6 +26,12 @@ server.get('/test', (req, res) => {
 })
 
 
+server.get('/homeid', (req, res) => {
+  res.render('startPage')
+
+})
+
+
 
 
 module.exports = server
