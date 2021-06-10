@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 html * {
   -webkit-font-smoothing: antialiased;
@@ -10,31 +11,53 @@ html * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+||||||| 121772e
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,600');
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+=======
+>>>>>>> bf0a4da9e21d043c2e247e8d695ce1e6fa0b7f6e
 html, body
 {
+
+    background-image:url('/images/backgroun.png');
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 88%;
     height: 100%;
     width: 100%;
     font-family: 'Open Sans', sans-serif;
     font-size: 24px;
     font-weight: 300;
-    background: ivory;
     overflow: hidden;
 }
-.card {
-  /* width: 60%;
-  height: 80%;
-  max-width: 300px;
-  max-height: 500px;
-  position: relative;
-  -o-perspective: 900px;
-  -webkit-perspective: 900px;
-  -ms-perspective: 900px;
-  perspective: 900px; */
-  width: 150px;
-  height: 250px;
-  margin: 10px auto;
+.answer1 {
   
-  text-align: center;
+    background: rgb(255, 255, 255);
+    border:3px solid rgb(8, 0, 0);
+    width: 150px;
+    height: 100px;
+    margin: 10px auto;
+    font-size: 35px;
+    text-align: center;
+}
+.answer2 {
+  
+    background: rgb(255, 255, 255);
+    border:3px solid rgb(8, 0, 0);
+    width: 150px;
+    height: 100px;
+    margin: 10px auto;
+    font-size: 35px;
+    text-align: center;
 }
 .answer {
     background: rgb(255, 255, 255);
@@ -58,8 +81,9 @@ html, body
 .container {
     display: flex;
     flex-direction: row;
-    position: bottom;
-
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
 }
 
 .butt {

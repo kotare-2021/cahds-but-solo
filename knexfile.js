@@ -22,7 +22,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: __dirname + 'migrations'
     }
   },
 
@@ -34,7 +34,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: __dirname + 'migrations'
     }
   }
 
