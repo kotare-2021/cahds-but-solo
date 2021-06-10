@@ -4,7 +4,7 @@ exports.seed = function(knex) {
   return knex('questionCards').del()
     .then(function () {
       // Inserts seed entries
-      return knex('QuestionCards').insert([
+      return knex('questionCards').insert([
         {id: 1, question: 'During his midlife crisis, my dad got really into ____.', round_id: 1},
         {id: 2, question: 'rA successful job interview begins with a firm handshake and ends with ____.', round_id: 2},
         {id: 3, question: 'My plan for world domination begins with ____.', round_id: 3},
