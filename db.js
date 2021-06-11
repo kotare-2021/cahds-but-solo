@@ -39,6 +39,18 @@ const getHand = (db = connection) => {
   .where('player_id', 1)
 }
 
+const chooseAnswer = (id, db=connection) => {
+  return db('answersCards').select()
+    .where('id', id)
+    .update({ chosen: true })
+}
+
+const unChoose = (id, db=connection) => {
+  return db('answersCards').select()
+    .where('id', id)
+    .update({ chosen:false })
+}
+
 
 const currentQ = (round, db = connection) => {
   return db('questionCards').select().first()
@@ -52,5 +64,7 @@ module.exports = {
   questionList,
   playerHand,
   currentQ,
-  getHand
+  getHand,
+  chooseAnswer,
+  unChoose
 }
