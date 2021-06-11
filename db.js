@@ -17,19 +17,54 @@ const getAnswerCardById = (id, db = connection) => {
     })
 }
 
-const getPlayerHand = (db = connection) => {
-  return db('answersCards').select()
-    .where('player_id', 1)
-    .then(resp => {
-      return resp
+const questionList = (db = connection) => {
+  return db('questionCards').select()
+    .then(cards => {
+      return cards
     })
     .catch(err => {
-      console.log('Database error: ' + err.message)
     })
 }
+
+const playerHand = (db = connection) => {
+  for(i=0; i<5; i++){
+  return db('answersCards').select()
+    .where('id', Math.floor(Math.random()*15 + 1))
+    .update({ player_id: 1 })
+  }
+}
+
+const getHand = (db = connection) => {
+  return db('answersCards').select()
+  .where('player_id', 1)
+}
+
+const chooseAnswer = (id, db=connection) => {
+  return db('answersCards').select()
+    .where('id', id)
+    .update({ chosen: true })
+}
+
+const unChoose = (id, db=connection) => {
+  return db('answersCards').select()
+    .where('id', id)
+    .update({ chosen:false })
+}
+
+
+const currentQ = (round, db = connection) => {
+  return db('questionCards').select().first()
+  .where('id', round)
+}
+
 
 module.exports = {
   testFunc,
   getAnswerCardById,
-  getPlayerHand
+  questionList,
+  playerHand,
+  currentQ,
+  getHand,
+  chooseAnswer,
+  unChoose
 }

@@ -1,12 +1,35 @@
-<link rel="stylesheet" href="/main.css">
- <div class="flip-card-3D-wrapper">
-	<div id="flip-card">
-		<div class="flip-card-front"><p>{{answer}} front</p>
-		</div>
-		<div class="flip-card-back"><p>Back</p>
-		</div>
-	</div>
+<div>
+    <div class="container">
+        {{!-- <div class="answer1">
+            <p> {{answer}}answer1</p>
+        </div> --}}
+        <div class="question">
+            <p>{{question.question}}</p>
+        </div>
+        {{!-- <div class="answer2">
+            <p>{{answer}}answer2</p>
+        </div> --}}
+    </div>
+
+<div class="container">
+    <div class="card">
+        <div class="played">
+            <p>{{answer}}</p>
+        </div>
+    </div>
 </div>
-<form action='/test'>
-  <input type='submit' />
-</form>
+<form>
+  <div class="container" >
+    {{#each hand}}
+    <form method='POST' action='/play/{{id}}'>
+    <input type='submit' />
+      <div class="card">
+        <div class="answer">
+          <p>{{answer}}</p>
+        </div>
+      </div>
+    {{!-- </button> --}}
+    </form>
+    {{/each}}
+  </div>
+</form> 
