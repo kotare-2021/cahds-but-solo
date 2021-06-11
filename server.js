@@ -38,4 +38,8 @@ server.get('/home', (req, res) => {
 })
 
 
+server.get('/round1', (req, res) => {
+  res.render('round1', {chosen: true})
+})
+
 module.exports = server

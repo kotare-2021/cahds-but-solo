@@ -1,14 +1,14 @@
 <div>
     <div class="container">
-        {{!-- <div class="answer1">
+        <div class="answer1">
             <p> {{answer}}answer1</p>
-        </div> --}}
+        </div>
         <div class="question">
             <p>{{question}}question</p>
         </div>
-        {{!-- <div class="answer2">
+        <div class="answer2">
             <p>{{answer}}answer2</p>
-        </div> --}}
+        </div>
     </div>
 
 <div class="container">
@@ -17,13 +17,13 @@
             <p>{{answer}}</p>
         </div>
     </div>
-</div>
+</div> 
 
 <form action='/' method='POST'>
   <div class="container" >
     {{#each cards}}
     <button type='submit' method='POST' action='/{{id}}'>
-      <div class="card">
+      <div class={{#if chosen}}'chosen'{{/if}}>
         <div class="answer">
           <p>{{answer}}</p>
         </div>
@@ -32,3 +32,11 @@
     {{/each}}
   </div>
 </form> 
+
+   {{!-- <button type='submit' method='POST' action='/{{id}}'>
+      <div class={{#if chosen}}'chosen'{{/if}}>
+        <div class="answer">
+          <p>{{answer}}</p>
+        </div>
+      </div>
+    </button> --}}
