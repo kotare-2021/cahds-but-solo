@@ -24,15 +24,16 @@ server.get('/play/:id', (req, res) => {
 })
 
 server.post('/play/:id', (req, res) => {
-  if(gameData.round < 6){
+  if(gameData.round < 5){
     gameData.round ++
-    res.render('home', gameData)
+    console.log(gameData.round)
+    res.render('round1', gameData)
   }else{
     res.redirect('/done')
   }
 })
 
-
+server.post('/', (req, res) => {
   // let gameData = {}
   gameData.round = 1
   return db.getHand()
@@ -46,11 +47,6 @@ server.post('/play/:id', (req, res) => {
       res.render('home', gameData)
     })
   })
-    
-    
-    
-    module.exports = server
-server.get('/round1', (req, res) => {
 })
 
 module.exports = server
