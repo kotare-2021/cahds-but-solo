@@ -34,6 +34,12 @@ const playerHand = (db = connection) => {
   }
 }
 
+const join = (db = connection) => {
+  return db('answersCards').select()
+    .where('player.id', 1)
+    .join('player', 'player.id', 'player_id')
+}
+
 const getHand = (db = connection) => {
   return db('answersCards').select()
   .where('player_id', 1)
