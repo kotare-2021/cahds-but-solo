@@ -26,8 +26,15 @@ server.get('/play/:id', (req, res) => {
 server.post('/play/:id', (req, res) => {
   if(gameData.round < 5){
     gameData.round ++
-    console.log(gameData.round)
-    res.render('round1', gameData)
+    return db.chooseAnswer(req.params.id)
+    .then(res => {
+      return db.getHand()
+        .then(resp => {
+          gameData.hand = resp
+          console.log(gameData.round)
+          res.render('round1', gameData)
+        })
+    })
   }else{
     res.redirect('/done')
   }
