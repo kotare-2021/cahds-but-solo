@@ -13,67 +13,42 @@ server.use(express.urlencoded({ extended: true }))
 server.use(express.static('public'))
 // Routes
 
-
+gameData = {}
 
 server.get('/', (req, res) => {
   res.render('startPage')
 })
 
-server.post('/', (req, res) => {
-  db.
+server.get('/play/:id', (req, res) => {
+  res.render('home', gameData)
 })
 
-// server.post('/', (req, res) => {
-//   let gameData = {}
-//   gameData.round = 1
-//   db.currentQ(gameData.round)
-//     .then(res => {
-//       console.log(res)
-//       gameData.question = res
-//       return gameData
-//     })
-//     .then(gameData => {
-//       db.playerHand()
-//       .then(resp => {
-//         console.log(resp)
-//         return resp
-//       })
-//     })
-//     .then(gameData => {
-//       db.getHand()
-//       .then(resp => {
-//         gameData.playerHand = resp
-//         console.log(resp)
-//         return resp
-//       })
-//       return gameData
-//     })
-//     .then(gameData => {
-//       console.log(gameData)
-//       res.render('home', gameData)
-//   })
-// })
-
-// server.get('/', (req, res) => {
-//   res.render('home', {cards: [{answer: 'hi'}, {answer: 'hi'}, {answer: 'hi'}, {answer: 'hi'}, {answer: 'hi'}]})
-// })
-
-// server.post('/game/:id', (req, res) => {
-//   db.playCard(id)
-// })
-
-// server.get('/test', (req, res) => {
-//   let card
-//   db.getAnswerCardById(2)
-//   .then(card => {
-//     console.log(card)
-//     res.render('test', card)
-//   })
-// })
-
-// server.get('/home', (req, res) => {
-//   res.render('startPage')
-// })
+server.post('/play/:id', (req, res) => {
+  if(gameData.round < 6){
+    gameData.round ++
+    res.render('home', gameData)
+  }else{
+    res.redirect('/done')
+  }
+})
 
 
-module.exports = server
+server.post('/', (req, res) => {
+  // let gameData = {}
+  gameData.round = 1
+  return db.getHand()
+  .then(resp => {
+    gameData.hand = resp
+    console.log(resp)
+    return db.currentQ(1)
+    .then(resp => {
+      gameData.question = resp
+      console.log(gameData)
+      res.render('home', gameData)
+    })
+  })
+})
+    
+    
+    
+    module.exports = server
