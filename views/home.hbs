@@ -18,18 +18,15 @@
         </div>
     </div>
 </div>
-<form>
-  <div class="container" >
-    {{#each hand}}
-    <form method='POST' action='/play/{{id}}'>
-    <input type='submit' />
-      <div class="card">
-        <div class="answer">
-          <p>{{answer}}</p>
-        </div>
+<div class="container" >
+  {{#each hand}}
+  <form method='POST' action='/play/{{id}}'>
+  <input type='submit' />
+    <div class="card">
+      <div class="answer">
+        <p>{{answer}}</p>
       </div>
-    {{!-- </button> --}}
-    </form>
-    {{/each}}
-  </div>
-</form> 
+    </div>
+  </form>
+  {{/each}}
+</div>

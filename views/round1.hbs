@@ -21,8 +21,8 @@
 
 <form action='/' method='POST'>
   <div class="container" >
-    {{#each cards}}
-    <button type='submit' method='POST' action='/{{id}}'>
+    {{#each hand}}
+    <button type='submit' method='POST' action='/play/{{id}}'>
       <div class={{#if chosen}}'chosen'{{/if}}>
         <div class="answer">
           <p>{{answer}}</p>
