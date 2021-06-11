@@ -33,7 +33,6 @@ server.post('/play/:id', (req, res) => {
 })
 
 
-server.post('/', (req, res) => {
   // let gameData = {}
   gameData.round = 1
   return db.getHand()
@@ -47,8 +46,11 @@ server.post('/', (req, res) => {
       res.render('home', gameData)
     })
   })
-})
     
     
     
     module.exports = server
+server.get('/round1', (req, res) => {
+})
+
+module.exports = server
